@@ -1,0 +1,20 @@
+﻿<Page x:Class="VetAptekaMurzik.Pages.PageReport"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VetAptekaMurzik.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageReport">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <RichTextBox x:Name="rtbReport" Margin="15" Grid.Row="0" HorizontalContentAlignment="Center" SpellCheck.IsEnabled="True" Language="ru-ru" Height="350" Background="#93E2A3"/>
+        <Button Name="btnSaveReport" Grid.Row="2" HorizontalAlignment="Left" Click="btnSaveReport_Click" TabIndex="3">Сохранить</Button>
+        <Button Name="btnPrintReport" Grid.Row="2" HorizontalAlignment="Right" Click="btnPrintReport_Click" TabIndex="3">Печать</Button>
+    </Grid>
+</Page>

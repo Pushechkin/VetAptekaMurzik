@@ -1,0 +1,25 @@
+﻿<Page x:Class="VetAptekaMurzik.Pages.PageAccount"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VetAptekaMurzik.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageAccount">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical">
+            <Button Name="btnProducts" Margin="10" Click="btnProducts_Click" TabIndex="1">Товары</Button>
+            <Button Name="btnCategory" Margin="10" Click="btnCategory_Click" TabIndex="2" >Категория</Button>
+            <Button Name="btnDiagram" Margin="10" Click="btnDiagram_Click" TabIndex="3" >Диаграммы</Button>
+            <Button Name="btnReport" Margin="10" Click="btnReport_Click" TabIndex="4">Составить отчёт</Button>
+        </StackPanel>
+
+        <Frame Grid.Column="1" NavigationUIVisibility="Hidden" Name="AccountFrame"></Frame>
+    </Grid>
+</Page>

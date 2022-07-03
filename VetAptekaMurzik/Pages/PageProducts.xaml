@@ -1,0 +1,50 @@
+﻿<Page x:Class="VetAptekaMurzik.Pages.PageProducts"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VetAptekaMurzik.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageProducts">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition> 
+        </Grid.ColumnDefinitions>
+        <TextBox  Name="Search" TextChanged="Search_TextChanged" TabIndex="1"></TextBox>
+        <ComboBox Grid.Column="1" Name="CBoxCategories" SelectionChanged="CBoxCategories_SelectionChanged" TabIndex="2">
+            <ComboBoxItem Content="Все"></ComboBoxItem>
+            <ComboBoxItem Content="Категория A"></ComboBoxItem>
+            <ComboBoxItem Content="Категория B"></ComboBoxItem>
+            <ComboBoxItem Content="Категория C"></ComboBoxItem>
+        </ComboBox>
+        </Grid>
+        <DataGrid IsReadOnly="True" Grid.Row="1" AutoGenerateColumns="False" x:Name="DGridProducts" Grid.ColumnSpan="3" Margin="0,0,0,-0.4">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding id_product}"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="Категория" Binding="{Binding id_category}"/>
+                <DataGridTextColumn Header="Номер склада" Binding="{Binding id_storage}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnEdit" Click="btnEdit_Click">Редактировать</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="btnAddProduct" Grid.Row="2" HorizontalAlignment="Left" Click="btnAddProduct_Click" TabIndex="3">Добавить</Button>
+        <Button Name="btnDeleteProduct" Grid.Row="2" HorizontalAlignment="Right" Click="btnDeleteProduct_Click" TabIndex="4" >Удалить</Button>
+    </Grid>
+</Page>
